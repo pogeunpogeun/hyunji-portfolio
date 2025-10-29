@@ -30,8 +30,14 @@ export default defineConfig((/* ctx */) => {
       'material-icons', // optional, you are not bound to it
     ],
 
+    vueRouterMode: 'hash',
+
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#build
     build: {
+      publicPath: './',
+      extendViteConf(viteConf) {
+        viteConf.base = './'; // ✅ Vite도 강제로 상대 경로
+      },
       target: {
         browser: ['es2022', 'firefox115', 'chrome115', 'safari14'],
         node: 'node20',
@@ -43,7 +49,7 @@ export default defineConfig((/* ctx */) => {
         // extendTsConfig (tsConfig) {}
       },
 
-      vueRouterMode: 'hash', // available values: 'hash', 'history'
+      // available values: 'hash', 'history'
       // vueRouterBase,
       // vueDevtools,
       // vueOptionsAPI: false,

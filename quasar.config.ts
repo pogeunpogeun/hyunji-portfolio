@@ -34,12 +34,7 @@ export default defineConfig((/* ctx */) => {
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#build
     build: {
-      extendViteConf(viteConf) {
-        viteConf.base =
-          process.env.NODE_ENV === 'production'
-            ? '/portfolio/' // ✅ 배포 환경
-            : '/'; // ✅ 로컬 개발 환경
-      },
+      publicPath: process.env.NODE_ENV === 'production' ? '/portfolio/' : '/',
       target: {
         browser: ['es2022', 'firefox115', 'chrome115', 'safari14'],
         node: 'node20',

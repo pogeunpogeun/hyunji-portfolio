@@ -121,10 +121,11 @@
       </p>
     </div>
   </div>
+  <button v-show="showScrollTop" class="scroll-top" @click="scrollToTop">↑</button>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { onMounted, onUnmounted, ref } from 'vue';
 
 const profile = ref<HTMLElement | null>(null);
 const career = ref<HTMLElement | null>(null);
@@ -141,6 +142,24 @@ function scrollToSection(section: keyof typeof sections) {
 }
 
 const sections = { profile, career, project, contact };
+
+const showScrollTop = ref(false);
+
+function handleScroll() {
+  showScrollTop.value = window.scrollY > 200;
+}
+
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll);
+});
 </script>
 
 <style scoped>
@@ -258,5 +277,31 @@ const sections = { profile, career, project, contact };
 
 .no-link:hover {
   color: #000;
+}
+
+.scroll-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background: #111;
+  color: #fff;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0.8;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.scroll-top:hover {
+  opacity: 1;
+  transform: translateY(-3px);
 }
 </style>

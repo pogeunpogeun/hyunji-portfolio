@@ -34,7 +34,7 @@ export default defineConfig((/* ctx */) => {
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#build
     build: {
-      publicPath: process.env.NODE_ENV === 'production' ? '/portfolio/' : '/',
+      publicPath: '/portfolio/',
       target: {
         browser: ['es2022', 'firefox115', 'chrome115', 'safari14'],
         node: 'node20',

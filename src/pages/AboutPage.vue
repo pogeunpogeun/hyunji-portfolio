@@ -2,7 +2,7 @@
   <div class="about-container">
     <!-- HEADER AREA -->
     <div class="header">
-      <img class="profile-img" src="/profile.png" alt="profile" />
+      <img class="profile-img" src="profile.png" alt="profile" />
       <h1>황현지</h1>
       <p class="subtitle">Backend Engineer</p>
       <p class="description">좋아하는 것을 구조화하고, 흐름이 자연스러운 서비스를 지향합니다.</p>
@@ -92,8 +92,8 @@
         도구를 지향합니다.
       </p>
 
-      <img src="/musicmap1.png" alt="MusicMap UI" />
-      <img src="/musicmap2.png" alt="MusicMap UI" />
+      <img src="musicmap1.png" alt="MusicMap UI" />
+      <img src="musicmap2.png" alt="MusicMap UI" />
 
       <p class="tech-stack">
         Vue3 + Quasar · Kotlin + Spring Boot · JPA · PostgreSQL (태그 추천 및 연관도 기반 탐색

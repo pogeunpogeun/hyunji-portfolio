@@ -109,7 +109,7 @@
       </p>
       <p class="contact-line">
         <span class="label">GitHub</span>
-        <a href="https://github.com/여기에_네_깃헙아이디" class="no-link" target="_blank"
+        <a href="https://github.com/pogeunpogeun" class="no-link" target="_blank"
           >github.com/pogeunpogeun</a
         >
       </p>
